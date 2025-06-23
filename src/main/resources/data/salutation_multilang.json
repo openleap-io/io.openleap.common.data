@@ -1,0 +1,482 @@
+[
+  {
+    "customId": 1,
+    "languageCode": "de",
+    "salutation": "Herr"
+  },
+  {
+    "customId": 1,
+    "languageCode": "en",
+    "salutation": "Mr."
+  },
+  {
+    "customId": 1,
+    "languageCode": "fr",
+    "salutation": "Monsieur"
+  },
+  {
+    "customId": 1,
+    "languageCode": "ch",
+    "salutation": "Herr"
+  },
+  {
+    "customId": 2,
+    "languageCode": "de",
+    "salutation": "Frau"
+  },
+  {
+    "customId": 2,
+    "languageCode": "en",
+    "salutation": "Mrs."
+  },
+  {
+    "customId": 2,
+    "languageCode": "fr",
+    "salutation": "Madame"
+  },
+  {
+    "customId": 2,
+    "languageCode": "ch",
+    "salutation": "Frau"
+  },
+  {
+    "customId": 3,
+    "languageCode": "de",
+    "salutation": "Firma"
+  },
+  {
+    "customId": 3,
+    "languageCode": "en",
+    "salutation": "Company"
+  },
+  {
+    "customId": 3,
+    "languageCode": "fr",
+    "salutation": "Entreprise"
+  },
+  {
+    "customId": 3,
+    "languageCode": "ch",
+    "salutation": "Firma"
+  },
+  {
+    "customId": 4,
+    "languageCode": "de",
+    "salutation": "Fahrschule"
+  },
+  {
+    "customId": 4,
+    "languageCode": "en",
+    "salutation": "Driving School"
+  },
+  {
+    "customId": 4,
+    "languageCode": "fr",
+    "salutation": "Auto-école"
+  },
+  {
+    "customId": 4,
+    "languageCode": "ch",
+    "salutation": "Fahrschuel"
+  },
+  {
+    "customId": 5,
+    "languageCode": "de",
+    "salutation": "Herren"
+  },
+  {
+    "customId": 5,
+    "languageCode": "en",
+    "salutation": "Gentlemen"
+  },
+  {
+    "customId": 5,
+    "languageCode": "fr",
+    "salutation": "Messieurs"
+  },
+  {
+    "customId": 5,
+    "languageCode": "ch",
+    "salutation": "Herren"
+  },
+  {
+    "customId": 6,
+    "languageCode": "de",
+    "salutation": "Gemeinde"
+  },
+  {
+    "customId": 6,
+    "languageCode": "en",
+    "salutation": "Municipality"
+  },
+  {
+    "customId": 6,
+    "languageCode": "fr",
+    "salutation": "Commune"
+  },
+  {
+    "customId": 6,
+    "languageCode": "ch",
+    "salutation": "Gmeind"
+  },
+  {
+    "customId": 7,
+    "languageCode": "de",
+    "salutation": "Fahrschulen"
+  },
+  {
+    "customId": 7,
+    "languageCode": "en",
+    "salutation": "Driving Schools"
+  },
+  {
+    "customId": 7,
+    "languageCode": "fr",
+    "salutation": "Auto-écoles"
+  },
+  {
+    "customId": 7,
+    "languageCode": "ch",
+    "salutation": "Fahrschuele"
+  },
+  {
+    "customId": 8,
+    "languageCode": "de",
+    "salutation": "Frau und Herr"
+  },
+  {
+    "customId": 8,
+    "languageCode": "en",
+    "salutation": "Mrs. and Mr."
+  },
+  {
+    "customId": 8,
+    "languageCode": "fr",
+    "salutation": "Madame et Monsieur"
+  },
+  {
+    "customId": 8,
+    "languageCode": "ch",
+    "salutation": "Frau und Herr"
+  },
+  {
+    "customId": 9,
+    "languageCode": "de",
+    "salutation": "Familie"
+  },
+  {
+    "customId": 9,
+    "languageCode": "en",
+    "salutation": "Family"
+  },
+  {
+    "customId": 9,
+    "languageCode": "fr",
+    "salutation": "Famille"
+  },
+  {
+    "customId": 9,
+    "languageCode": "ch",
+    "salutation": "Familie"
+  },
+  {
+    "customId": 10,
+    "languageCode": "de",
+    "salutation": "Eheleute"
+  },
+  {
+    "customId": 10,
+    "languageCode": "en",
+    "salutation": "Married Couple"
+  },
+  {
+    "customId": 10,
+    "languageCode": "fr",
+    "salutation": "Couple marié"
+  },
+  {
+    "customId": 10,
+    "languageCode": "ch",
+    "salutation": "Ehepaar"
+  },
+  {
+    "customId": 11,
+    "languageCode": "de",
+    "salutation": "Herr Dr."
+  },
+  {
+    "customId": 11,
+    "languageCode": "en",
+    "salutation": "Dr. Mr."
+  },
+  {
+    "customId": 11,
+    "languageCode": "fr",
+    "salutation": "Docteur Monsieur"
+  },
+  {
+    "customId": 11,
+    "languageCode": "ch",
+    "salutation": "Dr. Herr"
+  },
+  {
+    "customId": 12,
+    "languageCode": "de",
+    "salutation": "Frau Dr."
+  },
+  {
+    "customId": 12,
+    "languageCode": "en",
+    "salutation": "Dr. Mrs."
+  },
+  {
+    "customId": 12,
+    "languageCode": "fr",
+    "salutation": "Docteur Madame"
+  },
+  {
+    "customId": 12,
+    "languageCode": "ch",
+    "salutation": "Dr. Frau"
+  },
+  {
+    "customId": 13,
+    "languageCode": "de",
+    "salutation": "Professor"
+  },
+  {
+    "customId": 13,
+    "languageCode": "en",
+    "salutation": "Professor"
+  },
+  {
+    "customId": 13,
+    "languageCode": "fr",
+    "salutation": "Professeur"
+  },
+  {
+    "customId": 13,
+    "languageCode": "ch",
+    "salutation": "Professor"
+  },
+  {
+    "customId": 14,
+    "languageCode": "de",
+    "salutation": "Sehr geehrte Damen und Herren"
+  },
+  {
+    "customId": 14,
+    "languageCode": "en",
+    "salutation": "Dear Sir or Madam"
+  },
+  {
+    "customId": 14,
+    "languageCode": "fr",
+    "salutation": "Mesdames et Messieurs"
+  },
+  {
+    "customId": 14,
+    "languageCode": "ch",
+    "salutation": "Grüezi mitenand"
+  },
+  {
+    "customId": 15,
+    "languageCode": "de",
+    "salutation": "Team"
+  },
+  {
+    "customId": 15,
+    "languageCode": "en",
+    "salutation": "Team"
+  },
+  {
+    "customId": 15,
+    "languageCode": "fr",
+    "salutation": "Équipe"
+  },
+  {
+    "customId": 15,
+    "languageCode": "ch",
+    "salutation": "Team"
+  },
+  {
+    "customId": 16,
+    "languageCode": "de",
+    "salutation": "Abteilung"
+  },
+  {
+    "customId": 16,
+    "languageCode": "en",
+    "salutation": "Department"
+  },
+  {
+    "customId": 16,
+    "languageCode": "fr",
+    "salutation": "Département"
+  },
+  {
+    "customId": 16,
+    "languageCode": "ch",
+    "salutation": "Abteilig"
+  },
+  {
+    "customId": 17,
+    "languageCode": "de",
+    "salutation": "Kanzlei"
+  },
+  {
+    "customId": 17,
+    "languageCode": "en",
+    "salutation": "Law Office"
+  },
+  {
+    "customId": 17,
+    "languageCode": "fr",
+    "salutation": "Cabinet juridique"
+  },
+  {
+    "customId": 17,
+    "languageCode": "ch",
+    "salutation": "Kanzlei"
+  },
+  {
+    "customId": 18,
+    "languageCode": "de",
+    "salutation": "Praxis"
+  },
+  {
+    "customId": 18,
+    "languageCode": "en",
+    "salutation": "Medical Practice"
+  },
+  {
+    "customId": 18,
+    "languageCode": "fr",
+    "salutation": "Cabinet médical"
+  },
+  {
+    "customId": 18,
+    "languageCode": "ch",
+    "salutation": "Praxä"
+  },
+  {
+    "customId": 19,
+    "languageCode": "de",
+    "salutation": "Schule"
+  },
+  {
+    "customId": 19,
+    "languageCode": "en",
+    "salutation": "School"
+  },
+  {
+    "customId": 19,
+    "languageCode": "fr",
+    "salutation": "École"
+  },
+  {
+    "customId": 19,
+    "languageCode": "ch",
+    "salutation": "Schuel"
+  },
+  {
+    "customId": 20,
+    "languageCode": "de",
+    "salutation": "Universität"
+  },
+  {
+    "customId": 20,
+    "languageCode": "en",
+    "salutation": "University"
+  },
+  {
+    "customId": 20,
+    "languageCode": "fr",
+    "salutation": "Université"
+  },
+  {
+    "customId": 20,
+    "languageCode": "ch",
+    "salutation": "Uni"
+  },
+  {
+    "customId": 21,
+    "languageCode": "de",
+    "salutation": "Verein"
+  },
+  {
+    "customId": 21,
+    "languageCode": "en",
+    "salutation": "Association"
+  },
+  {
+    "customId": 21,
+    "languageCode": "fr",
+    "salutation": "Association"
+  },
+  {
+    "customId": 21,
+    "languageCode": "ch",
+    "salutation": "Verein"
+  },
+  {
+    "customId": 22,
+    "languageCode": "de",
+    "salutation": "Redaktion"
+  },
+  {
+    "customId": 22,
+    "languageCode": "en",
+    "salutation": "Editorial Office"
+  },
+  {
+    "customId": 22,
+    "languageCode": "fr",
+    "salutation": "Rédaction"
+  },
+  {
+    "customId": 22,
+    "languageCode": "ch",
+    "salutation": "Redaktion"
+  },
+  {
+    "customId": 23,
+    "languageCode": "de",
+    "salutation": "Büro"
+  },
+  {
+    "customId": 23,
+    "languageCode": "en",
+    "salutation": "Office"
+  },
+  {
+    "customId": 23,
+    "languageCode": "fr",
+    "salutation": "Bureau"
+  },
+  {
+    "customId": 23,
+    "languageCode": "ch",
+    "salutation": "Büro"
+  },
+  {
+    "customId": 24,
+    "languageCode": "de",
+    "salutation": "Institut"
+  },
+  {
+    "customId": 24,
+    "languageCode": "en",
+    "salutation": "Institute"
+  },
+  {
+    "customId": 24,
+    "languageCode": "fr",
+    "salutation": "Institut"
+  },
+  {
+    "customId": 24,
+    "languageCode": "ch",
+    "salutation": "Institut"
+  }
+]

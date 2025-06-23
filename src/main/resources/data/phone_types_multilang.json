@@ -1,0 +1,458 @@
+[
+  {
+    "customId": 1,
+    "languageCode": "de",
+    "name": "Handy",
+    "description": "Mobiltelefon"
+  },
+  {
+    "customId": 1,
+    "languageCode": "en",
+    "name": "Mobile",
+    "description": "Mobile phone"
+  },
+  {
+    "customId": 1,
+    "languageCode": "fr",
+    "name": "Portable",
+    "description": "Téléphone mobile"
+  },
+  {
+    "customId": 1,
+    "languageCode": "ch",
+    "name": "Handy",
+    "description": "Natel"
+  },
+  {
+    "customId": 2,
+    "languageCode": "de",
+    "name": "Privat",
+    "description": "Festnetzanschluss"
+  },
+  {
+    "customId": 2,
+    "languageCode": "en",
+    "name": "Private",
+    "description": "Landline"
+  },
+  {
+    "customId": 2,
+    "languageCode": "fr",
+    "name": "Privé",
+    "description": "Ligne fixe"
+  },
+  {
+    "customId": 2,
+    "languageCode": "ch",
+    "name": "Privat",
+    "description": "Privatleitung"
+  },
+  {
+    "customId": 3,
+    "languageCode": "de",
+    "name": "Mobil",
+    "description": "Allgemeine Mobilnummer"
+  },
+  {
+    "customId": 3,
+    "languageCode": "en",
+    "name": "Cell",
+    "description": "General mobile number"
+  },
+  {
+    "customId": 3,
+    "languageCode": "fr",
+    "name": "Mobile",
+    "description": "Numéro mobile général"
+  },
+  {
+    "customId": 3,
+    "languageCode": "ch",
+    "name": "Mobil",
+    "description": "Handynummer"
+  },
+  {
+    "customId": 4,
+    "languageCode": "de",
+    "name": "Arbeit",
+    "description": "Geschäftlicher Anschluss"
+  },
+  {
+    "customId": 4,
+    "languageCode": "en",
+    "name": "Work",
+    "description": "Business line"
+  },
+  {
+    "customId": 4,
+    "languageCode": "fr",
+    "name": "Travail",
+    "description": "Ligne professionnelle"
+  },
+  {
+    "customId": 4,
+    "languageCode": "ch",
+    "name": "Arbeit",
+    "description": "Geschäftsanschluss"
+  },
+  {
+    "customId": 5,
+    "languageCode": "de",
+    "name": "Fax Privat",
+    "description": "Privater Faxanschluss"
+  },
+  {
+    "customId": 5,
+    "languageCode": "en",
+    "name": "Fax Private",
+    "description": "Private fax"
+  },
+  {
+    "customId": 5,
+    "languageCode": "fr",
+    "name": "Fax Privé",
+    "description": "Fax privé"
+  },
+  {
+    "customId": 5,
+    "languageCode": "ch",
+    "name": "Fax Privat",
+    "description": "Privatfax"
+  },
+  {
+    "customId": 6,
+    "languageCode": "de",
+    "name": "Fax Arbeit",
+    "description": "Geschäftlicher Faxanschluss"
+  },
+  {
+    "customId": 6,
+    "languageCode": "en",
+    "name": "Fax Work",
+    "description": "Business fax"
+  },
+  {
+    "customId": 6,
+    "languageCode": "fr",
+    "name": "Fax Travail",
+    "description": "Fax professionnel"
+  },
+  {
+    "customId": 6,
+    "languageCode": "ch",
+    "name": "Fax Arbeit",
+    "description": "Geschäftsfax"
+  },
+  {
+    "customId": 7,
+    "languageCode": "de",
+    "name": "Pager",
+    "description": "Personenrufempfänger"
+  },
+  {
+    "customId": 7,
+    "languageCode": "en",
+    "name": "Pager",
+    "description": "Pager"
+  },
+  {
+    "customId": 7,
+    "languageCode": "fr",
+    "name": "Pager",
+    "description": "Téléavertisseur"
+  },
+  {
+    "customId": 7,
+    "languageCode": "ch",
+    "name": "Pager",
+    "description": "Pager"
+  },
+  {
+    "customId": 8,
+    "languageCode": "de",
+    "name": "Hauptnummer",
+    "description": "Primäre Rufnummer"
+  },
+  {
+    "customId": 8,
+    "languageCode": "en",
+    "name": "Main",
+    "description": "Primary number"
+  },
+  {
+    "customId": 8,
+    "languageCode": "fr",
+    "name": "Numéro Principal",
+    "description": "Numéro principal"
+  },
+  {
+    "customId": 8,
+    "languageCode": "ch",
+    "name": "Hauptnummer",
+    "description": "Hauptnummer"
+  },
+  {
+    "customId": 9,
+    "languageCode": "de",
+    "name": "iPhone",
+    "description": "Apple iPhone Anschluss"
+  },
+  {
+    "customId": 9,
+    "languageCode": "en",
+    "name": "iPhone",
+    "description": "Apple iPhone line"
+  },
+  {
+    "customId": 9,
+    "languageCode": "fr",
+    "name": "iPhone",
+    "description": "Ligne iPhone Apple"
+  },
+  {
+    "customId": 9,
+    "languageCode": "ch",
+    "name": "iPhone",
+    "description": "iPhone Anschluss"
+  },
+  {
+    "customId": 10,
+    "languageCode": "de",
+    "name": "Auto",
+    "description": "Autotelefon"
+  },
+  {
+    "customId": 10,
+    "languageCode": "en",
+    "name": "Car",
+    "description": "Car phone"
+  },
+  {
+    "customId": 10,
+    "languageCode": "fr",
+    "name": "Voiture",
+    "description": "Téléphone de voiture"
+  },
+  {
+    "customId": 10,
+    "languageCode": "ch",
+    "name": "Auto",
+    "description": "Autotelefon"
+  },
+  {
+    "customId": 11,
+    "languageCode": "de",
+    "name": "Assistent",
+    "description": "Telefon des Assistenten"
+  },
+  {
+    "customId": 11,
+    "languageCode": "en",
+    "name": "Assistant",
+    "description": "Assistant's phone"
+  },
+  {
+    "customId": 11,
+    "languageCode": "fr",
+    "name": "Assistant",
+    "description": "Téléphone de l’assistant"
+  },
+  {
+    "customId": 11,
+    "languageCode": "ch",
+    "name": "Assistent",
+    "description": "Assistentenanschluss"
+  },
+  {
+    "customId": 12,
+    "languageCode": "de",
+    "name": "Sonstige",
+    "description": "Andere oder nicht spezifizierte Nummer"
+  },
+  {
+    "customId": 12,
+    "languageCode": "en",
+    "name": "Other",
+    "description": "Other or unspecified number"
+  },
+  {
+    "customId": 12,
+    "languageCode": "fr",
+    "name": "Autre",
+    "description": "Autre numéro"
+  },
+  {
+    "customId": 12,
+    "languageCode": "ch",
+    "name": "Sonstige",
+    "description": "Andere Nummer"
+  },
+  {
+    "customId": 13,
+    "languageCode": "de",
+    "name": "VoIP",
+    "description": "Internet-Telefonanschluss"
+  },
+  {
+    "customId": 13,
+    "languageCode": "en",
+    "name": "VoIP",
+    "description": "Internet phone"
+  },
+  {
+    "customId": 13,
+    "languageCode": "fr",
+    "name": "VoIP",
+    "description": "Téléphone internet"
+  },
+  {
+    "customId": 13,
+    "languageCode": "ch",
+    "name": "VoIP",
+    "description": "Internetanschluss"
+  },
+  {
+    "customId": 14,
+    "languageCode": "de",
+    "name": "Zentrale",
+    "description": "Allgemeine Unternehmensnummer"
+  },
+  {
+    "customId": 14,
+    "languageCode": "en",
+    "name": "Headquarter",
+    "description": "Corporate main line"
+  },
+  {
+    "customId": 14,
+    "languageCode": "fr",
+    "name": "Siège",
+    "description": "Numéro principal de l’entreprise"
+  },
+  {
+    "customId": 14,
+    "languageCode": "ch",
+    "name": "Zentrale",
+    "description": "Firmenzentrale"
+  },
+  {
+    "customId": 15,
+    "languageCode": "de",
+    "name": "Durchwahl",
+    "description": "Interne Nebenstelle"
+  },
+  {
+    "customId": 15,
+    "languageCode": "en",
+    "name": "Extension",
+    "description": "Internal extension"
+  },
+  {
+    "customId": 15,
+    "languageCode": "fr",
+    "name": "Poste",
+    "description": "Poste interne"
+  },
+  {
+    "customId": 15,
+    "languageCode": "ch",
+    "name": "Durchwahl",
+    "description": "Nebenstelle"
+  },
+  {
+    "customId": 16,
+    "languageCode": "de",
+    "name": "Notfall",
+    "description": "Nummer für Notfälle"
+  },
+  {
+    "customId": 16,
+    "languageCode": "en",
+    "name": "Emergency",
+    "description": "Emergency number"
+  },
+  {
+    "customId": 16,
+    "languageCode": "fr",
+    "name": "Urgence",
+    "description": "Numéro d’urgence"
+  },
+  {
+    "customId": 16,
+    "languageCode": "ch",
+    "name": "Notfall",
+    "description": "Notrufnummer"
+  },
+  {
+    "customId": 17,
+    "languageCode": "de",
+    "name": "Hotline",
+    "description": "Kundenservice oder Supportnummer"
+  },
+  {
+    "customId": 17,
+    "languageCode": "en",
+    "name": "Hotline",
+    "description": "Customer service or support"
+  },
+  {
+    "customId": 17,
+    "languageCode": "fr",
+    "name": "Hotline",
+    "description": "Service client ou support"
+  },
+  {
+    "customId": 17,
+    "languageCode": "ch",
+    "name": "Hotline",
+    "description": "Hotline"
+  },
+  {
+    "customId": 18,
+    "languageCode": "de",
+    "name": "Firmensitz",
+    "description": "Telefonnummer des Hauptsitzes"
+  },
+  {
+    "customId": 18,
+    "languageCode": "en",
+    "name": "Head Office",
+    "description": "Main office phone"
+  },
+  {
+    "customId": 18,
+    "languageCode": "fr",
+    "name": "Siège social",
+    "description": "Téléphone du siège"
+  },
+  {
+    "customId": 18,
+    "languageCode": "ch",
+    "name": "Firmensitz",
+    "description": "Hauptsitznummer"
+  },
+  {
+    "customId": 19,
+    "languageCode": "de",
+    "name": "Callcenter",
+    "description": "Callcenter oder zentrale Annahme"
+  },
+  {
+    "customId": 19,
+    "languageCode": "en",
+    "name": "Call Center",
+    "description": "Call center or front desk"
+  },
+  {
+    "customId": 19,
+    "languageCode": "fr",
+    "name": "Centre d’appel",
+    "description": "Centre d’appel"
+  },
+  {
+    "customId": 19,
+    "languageCode": "ch",
+    "name": "Callcenter",
+    "description": "Callcenter"
+  }
+]
