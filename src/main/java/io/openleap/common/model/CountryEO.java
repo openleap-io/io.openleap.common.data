@@ -71,28 +71,13 @@ public class CountryEO extends OlEntity {
     @Column(name = "subregion")
     private String subRegion;
 
-    @Embedded
-    private Name name;
+    @NotBlank
+    @Column(name = "name_common", nullable = false)
+    private String nameCommon;
 
-    /**
-     * top-level "name" structure containing common, official, and native translations
-     */
-    @Embeddable
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @SuperBuilder
-    public static class Name {
-
-        @NotBlank
-        @Column(name = "name_common", nullable = false)
-        private String common;
-
-        @NotBlank
-        @Column(name = "name_official", nullable = false)
-        private String official;
-
-    }
+    @NotBlank
+    @Column(name = "name_official", nullable = false)
+    private String nameOfficial;
 
 
 }

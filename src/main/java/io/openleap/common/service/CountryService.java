@@ -111,17 +111,10 @@ public class CountryService {
                 String commonName = nameNode.path("common").asText();
                 String officialName = nameNode.path("official").asText();
 
-
-
-                // assemble Name
-                CountryEO.Name name = CountryEO.Name.builder()
-                        .common(commonName)
-                        .official(officialName)
-                        .build();
-
                 // build and save entity
                 CountryEO country = CountryEO.builder()
-                        .name(name)
+                        .nameCommon(commonName)
+                        .nameOfficial(officialName)
                         .alpha2Code(alpha2)
                         .alpha3Code(alpha3)
                         .numericCode(Integer.parseInt(numeric))

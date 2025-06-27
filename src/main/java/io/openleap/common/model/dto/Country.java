@@ -39,19 +39,19 @@ import java.util.Map;
 @SuperBuilder
 public class Country {
 
-    @JsonProperty("cca2")
+    @JsonProperty("alpha2Code")
     @NotBlank
     @Size(min = 2, max = 2)
-    private String cca2;
+    private String alpha2Code;
 
-    @JsonProperty("cca3")
+    @JsonProperty("alpha3Code")
     @NotBlank
     @Size(min = 3, max = 3)
-    private String cca3;
+    private String alpha3Code;
 
-    @JsonProperty("ccn3")
+    @JsonProperty("numericCode")
     @NotBlank
-    private String ccn3;
+    private String numericCode;
 
     @JsonProperty("name")
     @Valid

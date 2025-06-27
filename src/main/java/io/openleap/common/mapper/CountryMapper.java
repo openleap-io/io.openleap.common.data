@@ -39,9 +39,9 @@ public interface CountryMapper {
     @Mapping(target = "optLock", ignore = true)
     @Mapping(target = "pKey", ignore = true)
     CountryEO toEntity(Country dto);
-    @Mapping(target = "cca2", source = "alpha2Code")
-    @Mapping(target = "cca3", source = "alpha3Code")
-    @Mapping(target = "ccn3", source = "numericCode")
+    @Mapping(target = "alpha2Code", source = "alpha2Code")
+    @Mapping(target = "alpha3Code", source = "alpha3Code")
+    @Mapping(target = "numericCode", source = "numericCode")
     @Mapping(target = "subregion", source = "subRegion")
     Country toDto(CountryEO entity);
 
