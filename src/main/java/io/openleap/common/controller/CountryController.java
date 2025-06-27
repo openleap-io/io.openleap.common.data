@@ -88,18 +88,18 @@ public class CountryController {
         return countryService.search(alpha2, alpha3, name);
     }
 
-    @PostMapping("/importCSV")
-    public ResponseEntity<String> importCsv(@RequestParam("file") MultipartFile file) {
-        try (
-                var inputStream = new BOMInputStream(file.getInputStream());
-                var reader = new CSVReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
-        ) {
-            int count = countryService.importFromCsvReader(reader);
-            return ResponseEntity.ok("Imported " + count + " country records.");
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("Import failed: " + e.getMessage());
-        }
-    }
+//    @PostMapping("/importCSV")
+//    public ResponseEntity<String> importCsv(@RequestParam("file") MultipartFile file) {
+//        try (
+//                var inputStream = new BOMInputStream(file.getInputStream());
+//                var reader = new CSVReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
+//        ) {
+//            int count = countryService.importFromCsvReader(reader);
+//            return ResponseEntity.ok("Imported " + count + " country records.");
+//        } catch (Exception e) {
+//            return ResponseEntity.internalServerError().body("Import failed: " + e.getMessage());
+//        }
+//    }
 
     @PostMapping("/importRestCountry")
     public ResponseEntity<String> importRestCountry() {

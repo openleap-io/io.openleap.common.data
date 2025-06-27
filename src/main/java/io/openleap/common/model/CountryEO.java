@@ -23,10 +23,8 @@
 
 package io.openleap.common.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -34,6 +32,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.antlr.v4.runtime.misc.NotNull;
+
+import java.util.Map;
 
 @SuperBuilder
 @NoArgsConstructor
@@ -52,22 +52,6 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class CountryEO extends OlEntity {
 
     @NotBlank
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @NotBlank
-    @Column(name = "officialName", nullable = false)
-    private String officialName;
-
-    @NotBlank
-    @Column(name = "nativeName", nullable = false)
-    private String nativeName;
-
-    @NotBlank
-    @Column(name = "nativeOfficialName", nullable = false)
-    private String nativeOfficialName;
-
-    @NotBlank
     @Size(min = 2, max = 2)
     @Column(name = "alpha2_code", nullable = false, length = 2)
     private String alpha2Code;
@@ -81,24 +65,34 @@ public class CountryEO extends OlEntity {
     @Column(name = "numeric_code", nullable = false)
     private Integer numericCode;
 
-    @Column(name = "iso_3166_2")
-    private String iso3166_2;
-
     @Column(name = "region")
     private String region;
 
-    @Column(name = "sub_region")
+    @Column(name = "subregion")
     private String subRegion;
 
-    @Column(name = "intermediate_region")
-    private String intermediateRegion;
+    @Embedded
+    private Name name;
 
-    @Column(name = "region_code")
-    private Integer regionCode;
+    /**
+     * top-level "name" structure containing common, official, and native translations
+     */
+    @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @SuperBuilder
+    public static class Name {
 
-    @Column(name = "sub_region_code")
-    private Integer subRegionCode;
+        @NotBlank
+        @Column(name = "name_common", nullable = false)
+        private String common;
 
-    @Column(name = "intermediate_region_code")
-    private Integer intermediateRegionCode;
+        @NotBlank
+        @Column(name = "name_official", nullable = false)
+        private String official;
+
+    }
+
+
 }

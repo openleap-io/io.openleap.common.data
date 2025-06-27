@@ -26,56 +26,54 @@ package io.openleap.common.service;
 
 import io.openleap.common.mapper.CountryMapper;
 import io.openleap.common.model.CountryEO;
+import io.openleap.common.model.TranslationEO;
 import io.openleap.common.model.dto.Country;
 import io.openleap.common.repository.CountryRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
+import io.openleap.common.repository.TranslationRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
 public class CountryService {
 
-    private final CountryRepository repository;
+    private final CountryRepository countryRepository;
+    private final TranslationRepository translationRepository;
     private final CountryMapper countryMapper;
 
 
     public List<Country> findAll() {
-        return countryMapper.toDtoList(repository.findAll());
+        return countryMapper.toDtoList(countryRepository.findAll());
     }
 
     public Optional<Country> findByNumericCode(Integer code) {
-        return repository.findByNumericCode(code).map(countryMapper::toDto);
+        return countryRepository.findByNumericCode(code).map(countryMapper::toDto);
     }
 
     public Optional<Country> findByAlpha2(String code) {
-        return repository.findByAlpha2CodeIgnoreCase(code).map(countryMapper::toDto);
+        return countryRepository.findByAlpha2CodeIgnoreCase(code).map(countryMapper::toDto);
     }
 
     public Optional<Country> findByAlpha3(String code) {
-        return repository.findByAlpha3CodeIgnoreCase(code).map(countryMapper::toDto);
+        return countryRepository.findByAlpha3CodeIgnoreCase(code).map(countryMapper::toDto);
     }
 
     public List<Country> search(String alpha2, String alpha3, String name) {
-        return countryMapper.toDtoList(repository.search(alpha2, alpha3, name));
+        return countryMapper.toDtoList(countryRepository.search(alpha2, alpha3, name));
     }
 
     public Country save(Country entity) {
-        return countryMapper.toDto(repository.save(countryMapper.toEntity(entity)));
+        return countryMapper.toDto(countryRepository.save(countryMapper.toEntity(entity)));
     }
 
     public void delete(Long id) {
-        repository.deleteById(id);
+        countryRepository.deleteById(id);
     }
 
     public int importFromRestCountries() throws Exception {
@@ -89,31 +87,41 @@ public class CountryService {
         return this.importFromJson(response.getBody());
     }
 
-    public int importFromJson(String json) throws Exception {
+    public int importFromJson(String json) {
         try {
-
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode root = objectMapper.readTree(json);
 
             int count = 0;
             for (JsonNode node : root) {
-                String name = node.at("/name/common").asText();
-                String officialName = node.at("/name/official").asText();
-                String nativeName = node.at("/name/nativeName/common").asText();
-                String nativeOfficialName = node.at("/name/nativeName/official").asText();
+                // top-level fields
                 String alpha2 = node.at("/cca2").asText();
                 String alpha3 = node.at("/cca3").asText();
                 String numeric = node.at("/ccn3").asText();
                 String region = node.at("/region").asText();
                 String subregion = node.at("/subregion").asText();
 
-                if (alpha2.isEmpty() || alpha3.isEmpty() || numeric.isEmpty()) continue;
+                // skip missing codes
+                if (alpha2.isEmpty() || alpha3.isEmpty() || numeric.isEmpty()) {
+                    continue;
+                }
 
+                // build Name.common & Name.official
+                JsonNode nameNode = node.get("name");
+                String commonName = nameNode.path("common").asText();
+                String officialName = nameNode.path("official").asText();
+
+
+
+                // assemble Name
+                CountryEO.Name name = CountryEO.Name.builder()
+                        .common(commonName)
+                        .official(officialName)
+                        .build();
+
+                // build and save entity
                 CountryEO country = CountryEO.builder()
                         .name(name)
-                        .officialName(officialName)
-                        .nativeName(nativeName)
-                        .nativeOfficialName(nativeOfficialName)
                         .alpha2Code(alpha2)
                         .alpha3Code(alpha3)
                         .numericCode(Integer.parseInt(numeric))
@@ -122,46 +130,61 @@ public class CountryService {
                         .optLock(0L)
                         .build();
 
-                repository.save(country);
+                country = countryRepository.save(country);
+                // build up to 3 nativeName entries
+//                Map<String, CountryEO.Translation> nativeMap = new HashMap<>();
+                Set<TranslationEO> translations = new HashSet<>();
+                JsonNode nativeNames = nameNode.path("nativeName");
+                if (nativeNames.isObject()) {
+                    for (Iterator<Map.Entry<String, JsonNode>> it = nativeNames.fields();
+                         it.hasNext() ; ) {
+                        Map.Entry<String, JsonNode> entry = it.next();
+                        String lang = entry.getKey();
+                        JsonNode t = entry.getValue();
+                        String tCommon = t.path("common").asText();
+                        String tOfficial = t.path("official").asText();
+                        if (tCommon != null && !tCommon.isBlank()) {
+
+                            translations.add(TranslationEO.builder()
+                                    .id(TranslationEO.TranslationKey.builder()
+                                            .entityId(country.getPKey())
+                                            .entityType(Country.class.getCanonicalName())
+                                            .langCode(lang)
+                                            .fieldName("common")
+                                            .build()
+                                    )
+                                    .value(tCommon)
+                                    .build()
+                            );
+                        }
+                        if (tOfficial != null && !tOfficial.isBlank()) {
+                            translations.add(TranslationEO.builder()
+                                    .id(TranslationEO.TranslationKey.builder()
+                                            .entityId(country.getPKey())
+                                            .entityType(Country.class.getCanonicalName())
+                                            .langCode(lang)
+                                            .fieldName("official")
+                                            .build()
+                                    )
+                                    .value(tOfficial)
+                                    .build()
+                            );
+                        }
+                        if (translations.size() > 0) {
+                            translationRepository.saveAll(translations);
+                        }
+                    }
+                }
                 count++;
             }
             return count;
-        }catch (Exception e){
+
+        } catch (Exception e) {
+            // you may want to log e
             return 0;
         }
     }
 
-
-    public int importFromCsvReader(CSVReader reader) throws IOException, CsvValidationException {
-        String[] row;
-        int count = 0;
-
-        reader.readNext(); // skip header
-
-        while ((row = reader.readNext()) != null) {
-            if (row.length < 4) continue;
-
-            CountryEO country = CountryEO.builder()
-                    .alpha2Code(row[1].trim())
-                    .alpha3Code(row[2].trim())
-                    .numericCode(Integer.parseInt(row[3].trim()))
-                    .name(row[0].trim())
-                    .iso3166_2(row.length > 4 ? row[4].trim() : null)
-                    .region(row.length > 5 ? row[5].trim() : null)
-                    .subRegion(row.length > 6 ? row[6].trim() : null)
-                    .intermediateRegion(row.length > 7 ? row[7].trim() : null)
-                    .regionCode(row.length > 8 ? tryParseInt(row[8]) : null)
-                    .subRegionCode(row.length > 9 ? tryParseInt(row[9]) : null)
-                    .intermediateRegionCode(row.length > 10 ? tryParseInt(row[10]) : null)
-                    .optLock(0L)
-                    .build();
-
-            repository.save(country);
-            count++;
-        }
-
-        return count;
-    }
 
     private Integer tryParseInt(String val) {
         try {

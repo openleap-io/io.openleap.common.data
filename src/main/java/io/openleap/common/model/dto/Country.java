@@ -25,39 +25,117 @@ package io.openleap.common.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Data;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Data
-@Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
+import java.util.Map;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@SuperBuilder
 public class Country {
+
+    @JsonProperty("cca2")
+    @NotBlank
+    @Size(min = 2, max = 2)
+    private String cca2;
+
+    @JsonProperty("cca3")
+    @NotBlank
+    @Size(min = 3, max = 3)
+    private String cca3;
+
+    @JsonProperty("ccn3")
+    @NotBlank
+    private String ccn3;
+
     @JsonProperty("name")
-    private String name;
-    @JsonProperty("officialName")
-    private String officialName;
-    @JsonProperty("nativeName")
-    private String nativeName;
-    @JsonProperty("nativeOfficialName")
-    private String nativeOfficialName;
-    @JsonProperty("alpha2Code")
-    private String alpha2Code;
-    @JsonProperty("alpha3Code")
-    private String alpha3Code;
-    @JsonProperty("numericCode")
-    private Integer numericCode;
-    @JsonProperty("iso3166_2")
-    private String iso3166_2;
+    @Valid
+    private Name name;
+
     @JsonProperty("region")
     private String region;
-    @JsonProperty("subRegion")
-    private String subRegion;
-    @JsonProperty("intermediateRegion")
-    private String intermediateRegion;
-    @JsonProperty("regionCode")
-    private Integer regionCode;
-    @JsonProperty("subRegionCode")
-    private Integer subRegionCode;
-    @JsonProperty("intermediateRegionCode")
-    private Integer intermediateRegionCode;
+
+    @JsonProperty("subregion")
+    private String subregion;
+
+    /**
+     * Nested class for the "name" structure.
+     */
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @SuperBuilder
+    public static class Name {
+
+        @JsonProperty("common")
+        @NotBlank
+        private String common;
+
+        @JsonProperty("official")
+        @NotBlank
+        private String official;
+
+        @JsonProperty("nativeName")
+        @Valid
+        @Size(max = 3)
+        private Map<String,Translation> nativeName;
+    }
+
+    /**
+     * Translation entry for per-language native names.
+     */
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @SuperBuilder
+    public static class Translation {
+
+        @JsonProperty("common")
+        @NotBlank
+        private String common;
+
+        @JsonProperty("official")
+        @NotBlank
+        private String official;
+    }
 }
+
+
+//@Data
+//@Builder
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+//public class Country {
+//    @JsonProperty("name")
+//    private String name;
+//    @JsonProperty("officialName")
+//    private String officialName;
+//    @JsonProperty("nativeName")
+//    private String nativeName;
+//    @JsonProperty("nativeOfficialName")
+//    private String nativeOfficialName;
+//    @JsonProperty("alpha2Code")
+//    private String alpha2Code;
+//    @JsonProperty("alpha3Code")
+//    private String alpha3Code;
+//    @JsonProperty("numericCode")
+//    private Integer numericCode;
+//    @JsonProperty("iso3166_2")
+//    private String iso3166_2;
+//    @JsonProperty("region")
+//    private String region;
+//    @JsonProperty("subRegion")
+//    private String subRegion;
+//    @JsonProperty("intermediateRegion")
+//    private String intermediateRegion;
+//    @JsonProperty("regionCode")
+//    private Integer regionCode;
+//    @JsonProperty("subRegionCode")
+//    private Integer subRegionCode;
+//    @JsonProperty("intermediateRegionCode")
+//    private Integer intermediateRegionCode;
+//}
