@@ -170,7 +170,7 @@
                         <configuration>
                             <classifier>client</classifier>
                             <excludes>
-                                <exclude>io.openleap.common.DataApplication</exclude>
+                                <exclude>**/DataApplication.class</exclude>
                                 <exclude>**/controller/**/*.class</exclude>
                             </excludes>
                         </configuration>
