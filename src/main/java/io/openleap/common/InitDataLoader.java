@@ -23,9 +23,7 @@
 
 package io.openleap.common;
 
-import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
 import io.openleap.common.service.*;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -64,7 +62,7 @@ public class InitDataLoader {
             //load Languages csv from classpath
             {
                 InputStream is = new ClassPathResource("data/language-codes-full.csv").getInputStream();
-                BOMInputStream bomIn = BOMInputStream.builder().setInputStream(is).get();
+                BOMInputStream bomIn = new BOMInputStream(is);
                 InputStreamReader inreader = new InputStreamReader(bomIn, StandardCharsets.UTF_8);
                 int langSize = langService.importFromCsvReader(new CSVReader(inreader));
                 log.info("Initialized {} languages from csv.", langSize);
@@ -89,7 +87,7 @@ public class InitDataLoader {
             //load subdivision csv from classpath
             {
                 InputStream is = new ClassPathResource("data/subdivisions.csv").getInputStream();
-                BOMInputStream bomIn = BOMInputStream.builder().setInputStream(is).get();
+                BOMInputStream bomIn = new BOMInputStream(is);
                 InputStreamReader inreader = new InputStreamReader(bomIn, StandardCharsets.UTF_8);
                 int subdivisionSize = subdivisionService.importFromCsvReader(new CSVReader(inreader));
                 log.info("Initialized {} subdivisions from csv.", subdivisionSize);

@@ -34,6 +34,12 @@ import lombok.Data;
 public class Country {
     @JsonProperty("name")
     private String name;
+    @JsonProperty("officialName")
+    private String officialName;
+    @JsonProperty("nativeName")
+    private String nativeName;
+    @JsonProperty("nativeOfficialName")
+    private String nativeOfficialName;
     @JsonProperty("alpha2Code")
     private String alpha2Code;
     @JsonProperty("alpha3Code")

@@ -46,7 +46,6 @@ import java.util.UUID;
 @SuperBuilder
 public class LangEO extends OlEntity {
 
-    @NotBlank
     @Column(name = "alpha2_code", length = 2, nullable = false)
     private String alpha2Code;
 

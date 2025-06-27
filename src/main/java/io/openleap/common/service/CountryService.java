@@ -98,6 +98,9 @@ public class CountryService {
             int count = 0;
             for (JsonNode node : root) {
                 String name = node.at("/name/common").asText();
+                String officialName = node.at("/name/official").asText();
+                String nativeName = node.at("/name/nativeName/common").asText();
+                String nativeOfficialName = node.at("/name/nativeName/official").asText();
                 String alpha2 = node.at("/cca2").asText();
                 String alpha3 = node.at("/cca3").asText();
                 String numeric = node.at("/ccn3").asText();
@@ -108,6 +111,9 @@ public class CountryService {
 
                 CountryEO country = CountryEO.builder()
                         .name(name)
+                        .officialName(officialName)
+                        .nativeName(nativeName)
+                        .nativeOfficialName(nativeOfficialName)
                         .alpha2Code(alpha2)
                         .alpha3Code(alpha3)
                         .numericCode(Integer.parseInt(numeric))

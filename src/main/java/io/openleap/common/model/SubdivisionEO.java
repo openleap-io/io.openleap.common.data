@@ -52,7 +52,6 @@ public class SubdivisionEO extends OlEntity {
     @Column(name = "name", nullable = false)
     private String subdivisionName;
 
-    @NotBlank
     @Column(name = "language_code", nullable = false, length = 2)
     private String languageCode;
 

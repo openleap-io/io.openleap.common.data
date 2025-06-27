@@ -26,6 +26,8 @@ package io.openleap.common.repository;
 import io.openleap.common.model.PhoneTypeEO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +36,7 @@ public interface PhoneTypeRepository extends JpaRepository<PhoneTypeEO, Long> {
     List<PhoneTypeEO> findByLanguageCode(String languageCode);
 
     @Query("SELECT p FROM PhoneTypeEO p WHERE p.languageCode = :languageCode AND LOWER(p.name) LIKE LOWER(CONCAT('%', :keyword, '%'))")
-    List<PhoneTypeEO> searchByLanguageCodeAndKeyword(String languageCode, String keyword);
+    List<PhoneTypeEO> searchByLanguageCodeAndKeyword(@Param("languageCode") String languageCode, @Param("keyword") String keyword);
 
     Optional<PhoneTypeEO> findByCustomIdAndLanguageCode(Integer customId, String languageCode);
 
