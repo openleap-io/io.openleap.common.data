@@ -50,7 +50,7 @@ import java.util.Optional;
         matchIfMissing = true    // → if not set, the controller is ON
 )
 @RestController
-@RequestMapping("${oleap.paths.api.countries}:/api/common/countries")
+@RequestMapping("${oleap.paths.api.countries:/api/common/countries}")
 @RequiredArgsConstructor
 public class CountryController {
 

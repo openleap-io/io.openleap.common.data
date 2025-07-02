@@ -50,7 +50,7 @@ import java.util.List;
         matchIfMissing = true    // → if not set, the controller is ON
 )
 @RestController
-@RequestMapping("${oleap.paths.api.languages}:/api/common/languages")
+@RequestMapping("${oleap.paths.api.languages:/api/common/languages}")
 @RequiredArgsConstructor
 public class LangController {
 

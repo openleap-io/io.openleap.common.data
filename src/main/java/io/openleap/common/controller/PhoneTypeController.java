@@ -44,7 +44,7 @@ import java.util.Optional;
         matchIfMissing = true    // → if not set, the controller is ON
 )
 @RestController
-@RequestMapping("${oleap.paths.api.phonetypes}:/api/common/phonetypes")
+@RequestMapping("${oleap.paths.api.phonetypes:/api/common/phonetypes}")
 @RequiredArgsConstructor
 public class PhoneTypeController {
 

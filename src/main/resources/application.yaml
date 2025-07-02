@@ -2,6 +2,7 @@ oleap:
   paths:
     api:
       countries: /api/common/countries
+      vatrates: /api/common/vatrates
       languages: /api/common/languages
       phonetypes: /api/common/phonetypes
       salutations: /api/common/salutations

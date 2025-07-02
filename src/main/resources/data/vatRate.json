@@ -1,0 +1,58 @@
+[
+  {
+    "customId": 0,
+    "rate": 0.00,
+    "description": "zero",
+    "languageCode": "de",
+    "validFrom": "0001-01-01",
+    "validTo": null
+  },
+  {
+    "customId": 5,
+    "rate": 19.00,
+    "description": "standard",
+    "languageCode": "de",
+    "validFrom": "0001-01-01",
+    "validTo": "2020-06-30"
+  },
+  {
+    "customId": 6,
+    "rate": 7.00,
+    "description": "reduced",
+    "languageCode": "de",
+    "validFrom": "0001-01-01",
+    "validTo": "2020-06-30"
+  },
+  {
+    "customId": 3,
+    "rate": 16.00,
+    "description": "temporary standard (Corona)",
+    "languageCode": "de",
+    "validFrom": "2020-07-01",
+    "validTo": "2020-12-31"
+  },
+  {
+    "customId": 4,
+    "rate": 5.00,
+    "description": "temporary reduced (Corona)",
+    "languageCode": "de",
+    "validFrom": "2020-07-01",
+    "validTo": "2020-12-31"
+  },
+  {
+    "customId": 1,
+    "rate": 19.00,
+    "description": "standard",
+    "languageCode": "de",
+    "validFrom": "2021-01-01",
+    "validTo": null
+  },
+  {
+    "customId": 2,
+    "rate": 7.00,
+    "description": "reduced",
+    "languageCode": "de",
+    "validFrom": "2021-01-01",
+    "validTo": null
+  }
+]

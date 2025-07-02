@@ -44,6 +44,7 @@ import java.nio.charset.StandardCharsets;
 public class InitDataLoader {
 
     private final CountryService countryService;
+    private final VatRateService vatRateService;
     private final LangService langService;
     private final PhoneTypeService phoneTypeService;
     private final SalutationService salutationService;
@@ -58,6 +59,13 @@ public class InitDataLoader {
                 String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
                 int countrySize = countryService.importFromJson(content);
                 log.info("Initialized {} countries from JSON.", countrySize);
+            }
+            // Load vatrate JSON from classpath
+            {
+                InputStream is = new ClassPathResource("data/vatRate.json").getInputStream();
+                String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
+                int vatRatesSize = vatRateService.importFromJson(content);
+                log.info("Initialized {} vat-rates from JSON.", vatRatesSize);
             }
             //load Languages csv from classpath
             {
