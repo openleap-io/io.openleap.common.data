@@ -24,12 +24,12 @@
 
 package io.openleap.common.service;
 
-import io.openleap.common.mapper.SubdivisionMapper;
-import io.openleap.common.model.SubdivisionEO;
-import io.openleap.common.model.dto.Subdivision;
-import io.openleap.common.repository.SubdivisionRepository;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import io.openleap.common.mapper.SubdivisionMapper;
+import io.openleap.common.model.dto.Subdivision;
+import io.openleap.common.repository.SubdivisionRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class SubdivisionService {
 

@@ -25,8 +25,6 @@ package io.openleap.common.repository;
 
 import io.openleap.common.model.VatRateEO;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;

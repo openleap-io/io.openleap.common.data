@@ -23,22 +23,21 @@
 
 package io.openleap.common.service;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import io.openleap.common.mapper.LangMapper;
 import io.openleap.common.model.LangEO;
 import io.openleap.common.model.dto.Lang;
 import io.openleap.common.repository.LangRepository;
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.util.*;
+import java.io.IOException;
+import java.util.List;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class LangService {
 

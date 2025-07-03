@@ -77,7 +77,7 @@ public class VatRateEO extends OlEntity {
     /**
      * The date from which this rate is effective.
      */
-    @Column(name = "valid_from", nullable = false)
+    @Column(name = "valid_from")
     private LocalDate validFrom;
 
     /**

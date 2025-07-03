@@ -23,12 +23,13 @@
 
 package io.openleap.common.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.openleap.common.mapper.PhoneTypeMapper;
 import io.openleap.common.model.PhoneTypeEO;
 import io.openleap.common.model.dto.PhoneType;
 import io.openleap.common.repository.PhoneTypeRepository;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class PhoneTypeService {
 

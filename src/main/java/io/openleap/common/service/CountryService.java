@@ -24,16 +24,16 @@
 
 package io.openleap.common.service;
 
-import io.openleap.common.mapper.CountryMapper;
-import io.openleap.common.model.CountryEO;
-import io.openleap.common.model.dto.Country;
-import io.openleap.common.repository.CountryRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import io.openleap.common.mapper.CountryMapper;
+import io.openleap.common.model.CountryEO;
+import io.openleap.common.model.dto.Country;
+import io.openleap.common.repository.CountryRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class CountryService {
 

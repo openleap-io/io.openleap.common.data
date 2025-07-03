@@ -24,13 +24,12 @@
 
 package io.openleap.common.controller;
 
+import com.opencsv.CSVReader;
 import io.openleap.common.model.dto.Subdivision;
 import io.openleap.common.service.SubdivisionService;
-import com.opencsv.CSVReader;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.input.BOMInputStream;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,7 +37,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.Optional;
 @ConditionalOnProperty(
         name            = "feature.common-data.api",
         havingValue     = "true",

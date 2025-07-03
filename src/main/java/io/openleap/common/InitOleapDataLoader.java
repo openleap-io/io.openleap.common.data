@@ -41,7 +41,7 @@ import java.nio.charset.StandardCharsets;
 @Profile("INITDATA")
 @RequiredArgsConstructor
 @Slf4j
-public class InitDataLoader {
+public class InitOleapDataLoader {
 
     private final CountryService countryService;
     private final VatRateService vatRateService;
