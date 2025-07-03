@@ -29,7 +29,7 @@ import io.openleap.common.mapper.PhoneTypeMapper;
 import io.openleap.common.model.PhoneTypeEO;
 import io.openleap.common.model.dto.PhoneType;
 import io.openleap.common.repository.PhoneTypeRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

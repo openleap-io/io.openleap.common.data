@@ -29,7 +29,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import io.openleap.common.mapper.SubdivisionMapper;
 import io.openleap.common.model.dto.Subdivision;
 import io.openleap.common.repository.SubdivisionRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

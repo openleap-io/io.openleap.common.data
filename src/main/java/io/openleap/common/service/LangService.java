@@ -29,7 +29,7 @@ import io.openleap.common.mapper.LangMapper;
 import io.openleap.common.model.LangEO;
 import io.openleap.common.model.dto.Lang;
 import io.openleap.common.repository.LangRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

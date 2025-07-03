@@ -32,7 +32,7 @@ import io.openleap.common.mapper.CountryMapper;
 import io.openleap.common.model.CountryEO;
 import io.openleap.common.model.dto.Country;
 import io.openleap.common.repository.CountryRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -90,6 +90,7 @@ public class CountryService {
         return this.importFromJson(response.getBody());
     }
 
+    @Transactional(readOnly = false)
     public int importFromJson(String json) throws Exception {
         try {
 
@@ -124,6 +125,7 @@ public class CountryService {
                         .build();
 
                 repository.save(country);
+                repository.flush();
                 count++;
             }
             return count;

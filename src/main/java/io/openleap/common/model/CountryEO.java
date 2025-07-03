@@ -55,16 +55,15 @@ public class CountryEO extends OlEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @NotBlank
-    @Column(name = "officialName", nullable = false)
+
+    @Column(name = "officialName")
     private String officialName;
 
-    @NotBlank
-    @Column(name = "nativeName", nullable = false)
+
+    @Column(name = "nativeName")
     private String nativeName;
 
-    @NotBlank
-    @Column(name = "nativeOfficialName", nullable = false)
+    @Column(name = "nativeOfficialName")
     private String nativeOfficialName;
 
     @NotBlank

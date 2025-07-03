@@ -28,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.openleap.common.mapper.SalutationMapper;
 import io.openleap.common.model.dto.Salutation;
 import io.openleap.common.repository.SalutationRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -28,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.openleap.common.mapper.VatRateMapper;
 import io.openleap.common.model.dto.VatRate;
 import io.openleap.common.repository.VatRateRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
